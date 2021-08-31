@@ -1,0 +1,2 @@
+rootProject.name = "Custom Keyboard"
+include ':app'
