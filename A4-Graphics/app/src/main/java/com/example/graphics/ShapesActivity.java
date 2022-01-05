@@ -1,5 +1,6 @@
 package com.example.graphics;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -8,11 +9,13 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.widget.ImageView;
 
 public class ShapesActivity extends AppCompatActivity {
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -21,11 +24,13 @@ public class ShapesActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        Bitmap bg = Bitmap.createBitmap(720, 1280, Bitmap.Config.ARGB_8888);
         ImageView i = (ImageView) findViewById(R.id.imageView);
 
-        i.setBackgroundDrawable(new BitmapDrawable(bg));
+        Bitmap bg = Bitmap.createBitmap(720, 1280, Bitmap.Config.ARGB_8888);
+        i.setImageBitmap(bg);
+
         Canvas canvas = new Canvas(bg);
+
         Paint paint = new Paint();
         paint.setColor(Color.BLUE);
         paint.setTextSize(50);
@@ -45,8 +50,5 @@ public class ShapesActivity extends AppCompatActivity {
         //To draw a Line
         canvas.drawText("Line", 480, 800, paint);
         canvas.drawLine(520, 850, 520, 1150, paint);
-
-
-
     }
 }

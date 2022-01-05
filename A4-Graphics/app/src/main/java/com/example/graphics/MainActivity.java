@@ -27,14 +27,13 @@ public class MainActivity extends AppCompatActivity{
         bt_zoom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 iv_animate.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(),R.anim.zoom_in));
             }
         });
         bt_rotate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                //iv_animate.animate().rotation(360).setDuration(3000);
                 iv_animate.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate_in));
             }
         });

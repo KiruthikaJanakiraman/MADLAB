@@ -27,5 +27,4 @@ public class MainActivity extends AppCompatActivity {
         int len = txt.length();
         display.setText(txt.substring(0, len-1));
     }
-
 }
